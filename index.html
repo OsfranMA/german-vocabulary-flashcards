@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Vocabulary Cards App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+NZ+Basic:wght@100..400&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="encabezado">
+        <h1 class="encabezado__title">Cards Deutsch</h1>
+    </header>
+
+    <main class="contenedorPrincipal">
+
+        <aside class="panelHerramientas">
+
+            <h2 class="panelHerramienta__title">Herramienta</h2>
+            <form class="form">
+                <h3 class="form__title">Añadir Nueva Tarjeta</h3>
+                <label for="PalabraenAleman" class="form__label">Palabra en Alemán</label>
+                <input type="text" id="PalabraenAleman" required>
+
+                <label for="TraduccionalEspañol" class="form__label">Traducción al Español</label>
+                <input type="text" id="TraduccionalEspañol" required>
+
+                <label for="form_label">Categoría</label>
+                    <select class="for__select" id="categoria">
+                        <option value="">Elegir...</option>
+                        <option value="basico">Básico</option>
+                        <option value="verbos">Verbos</option>
+                        <option value="viajes">Viajes</option>
+                    </select>
+                <button type="submit" class="btn">Añadir Tarjeta</button>
+            </form>
+
+            <div class="listaTarjetas">
+                <h2 class="listaTarjetas__title">Mis Tarjetas</h2>
+                <p class="listaTarjetas__descrition">Filtrar por categoria</p>
+                <p class="listaTarjetas__datos">Total: 1 tarjetas</p>
+            </div>
+
+        </aside>
+
+        <section class="tarjeta">
+
+            <h1 class="tarjeta__title">Tus Tarjetas Activas</h1>
+
+
+            <section class="flexible">
+                <div class="tarjetaaleman">
+                <button class="tarjetaaleman__btn-borrar">×</button>
+                <div class="contenido">
+                    <h3 class="contenido__palabra">Hallo </h3>
+                    <p class="contenido__significado">Hola</p>
+                    <span class="tarjeta-aleman__tag">Básico</span>
+                </div>
+                </div>
+            </section>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <p class="footer__texto">App de Tarjetas de Alemán -- Osfran Dev</p>
+        <p class="footer__copyright">Copyright</p>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

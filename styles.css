@@ -1,0 +1,301 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  /* font */
+  --font-title: "Arimo", sans-serif;
+  --font-texto: "Lato", sans-serif;
+
+  /* Colores de Fondo y Contenedores */
+  --fondo-principal: #f0f4f8;     /* El gris claro azulado del fondo general */
+  --sidebar-fondo: #161e2b;       /* El azul oscuro profundo del panel izquierdo */
+  --tarjeta-blanca: #ffffff;      /* El blanco limpio de los cuerpos de las tarjetas */
+
+  /* Colores de Acento (Bordes superiores y botones) */
+  --amarillo-aleman: #ffcc00;     /* El amarillo brillante de la primera tarjeta */
+  --azul-boton: #3b82f6;          /* El azul del botón "Añadir Tarjeta" */
+  --verde-exito: #2ecc71;         /* El verde para categorías o aciertos */
+  --rojo-eliminar: #e74c3c;       /* El rojo de los botones de cerrar (X) */
+  --naranja-alerta: #e67e22;      /* El naranja de la tarjeta de viajes */
+
+  /* Colores de Texto */
+  --texto-oscuro: #2c3e50;        /* Para los títulos principales de las tarjetas */
+  --texto-mutado: #7f8c8d;        /* Para las etiquetas secundarias y marcadores */
+  --texto-blanco: #ffffff;        /* Para los textos sobre fondos oscuros */
+}
+
+body {
+    background-color: var(--fondo-principal);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-title);
+}
+
+p, li, label, button {
+    font-family: var(--font-texto);
+    font-size: 1.19rem;
+}
+
+.encabezado {
+    padding-bottom: 0.3rem;
+    margin-bottom: 3rem;
+    border-bottom: 3px solid #e5e7e84e;
+}
+
+.encabezado__title {
+    color: #4e4e4e;
+    text-align: center;
+    padding: 0.3em 0;
+}
+
+.contenedorPrincipal {
+    margin: 2rem;
+    margin-bottom: 2rem;
+}
+
+.panelHerramientas {
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--sidebar-fondo);
+    color: var(--texto-blanco);
+    border-radius: 0.7em;
+}
+
+.panelHerramientas:hover {
+    transition: all 0.5s ease-in-out;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.panelHerramienta__title {
+    text-align: center;
+    margin: 1rem 1rem;
+}
+
+.listaTarjetas {
+    padding: 1rem 0.8em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.form {
+    border-radius: 0.5em;
+    padding: 0.7rem;
+    background-color: var(--tarjeta-blanca);
+    color: #000;
+    display: flex;
+    align-self: center;
+    width: 90%;
+    flex-direction: column;
+    gap: 0.4em;
+}
+
+.form__title {
+    margin-bottom: 0.4em;
+}
+
+.btn {
+    margin-top: 0.5em;
+    background-color: var(--azul-boton);
+    color: var(--texto-blanco);
+    border: none;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 0.3em;
+    text-shadow: 0 0 1px var(--fondo-principal), 0 0 3px var(--fondo-principal);
+}
+
+.tarjeta {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tarjeta__title {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.tarjetaaleman {
+    background-color: var(--tarjeta-blanca);
+    border-radius: 12px;
+    padding: 1.2rem;
+    position: relative; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+    border-bottom: 5px solid var(--amarillo-aleman); 
+    width: 100%; 
+    max-width: 100%; 
+    display: flex;
+    flex-direction: column; 
+    align-self: center; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjetaaleman:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.tarjetaaleman__btn-borrar {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: var(--rojo-eliminar);
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    padding: 2px 6px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.tarjetaaleman__btn-borrar:hover {
+    background-color: rgba(231, 76, 60, 0.1); 
+}
+
+.contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-top: 0.5rem; 
+}
+
+.contenido__palabra {
+    font-size: 1.6rem;
+    color: var(--texto-oscuro);
+    font-weight: 700;
+}
+
+.contenido__significado {
+    font-size: 1.1rem;
+    color: var(--texto-mutado);
+    margin-bottom: 0.4rem;
+}
+
+.tarjeta-aleman__tag {
+    font-family: var(--font-texto);
+    font-size: 0.85rem;
+    font-weight: bold;
+    background-color: #f0f4f8;
+    color: var(--texto-oscuro);
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid #e5e7e8;
+    align-self: flex-start; 
+}
+
+.footer {
+    border-top: #e5e7e84e 3px solid;
+    color: #4e4e4e;
+    padding: 0.8em;
+}
+
+.footer__texto {
+    text-align: center;
+    font-size: 0.96em;
+}
+
+.footer__copyright {
+    font-size: 0.88em;
+}
+
+@media (min-width: 768px) {
+
+    p, li, label, button, span {
+        font-size: 1.58rem;
+    }
+
+    h1, .tarjeta__title {
+        font-size: 2.33rem;
+    }
+
+    h2 {
+        font-size: 1.88rem;
+    }
+
+    h3 {
+        font-size: 1.64rem;
+    }
+
+    input, select {
+        font-size: 1.22rem;
+    }
+
+    .tarjetaaleman {
+        align-self: flex-start;
+        max-width: 300px;
+    }
+
+    .contenido__palabra {
+        font-size: 2rem;
+    }
+
+    .contenido__significado {
+        font-size: 1.8rem;
+    }
+
+    .tarjeta-aleman__tag {
+        font-size: 0.96rem;
+    }
+
+    .flexible {
+        display: flex;
+        flex-flow: wrap row;
+        justify-content: center;
+        position: relative;
+        gap: 1rem;
+    }
+
+    .footer {
+        font-size: 1rem;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+
+    .contenedorPrincipal {
+        display: grid;
+        grid-template-columns:  1fr 1fr;
+        padding: 0.7em 0;
+        margin: 0;
+    }
+
+    .panelHerramientas {
+        margin: 3rem 1.38rem;
+        max-height: 600px;
+    }
+
+    .tarjetaaleman {
+        align-self: flex-start;
+        max-width: 220px;
+    }
+
+    .contenido__palabra {
+        font-size: 2.11rem;
+    }
+
+    .contenido__significado {
+        font-size: 1.88rem;
+    }
+
+    .tarjeta-aleman__tag {
+        font-size: 1rem;
+    }
+
+    .footer {
+        font-size: 1.12rem;
+    }
+
+}
